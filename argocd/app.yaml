@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flask-k8s-ci-cd
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: flask-k8s-ci-cd/k8s
+    repoURL: 'https://github.com/YOUR_GITHUB_USERNAME/flask-k8s-ci-cd.git'
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
