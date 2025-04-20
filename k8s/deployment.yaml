@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: ghcr.io/mu/flask-k8s-ci-cd:latest
+        image: ghcr.io/mualadin/flask-k8s-ci-cd:latest
         ports:
         - containerPort: 5000
         env:
