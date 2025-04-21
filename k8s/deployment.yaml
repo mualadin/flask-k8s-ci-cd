@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-app
+  annotations:
+    commit-timestamp: "2025-04-20T16:30:00Z"
 spec:
   replicas: 1
   selector:
